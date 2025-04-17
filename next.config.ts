@@ -1,7 +1,7 @@
-import type { NextConfig } from "next";
+const isGithubPages = process.env.GITHUB_PAGES === 'true';
 
-const nextConfig: NextConfig = {
-  /* config options here */
+module.exports = {
+  output: 'export',
+  basePath: isGithubPages ? 'store' : '',
+  assetPrefix: isGithubPages ? 'store' : '',
 };
-
-export default nextConfig;
